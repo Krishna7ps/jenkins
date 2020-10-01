@@ -29,6 +29,7 @@
 node{
     stage("Build"){
         sh("echo ls")
+        sh("/usr/local/bin/kubectl version")
     }
     stage("Test"){
         sh("pwd")
