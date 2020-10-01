@@ -27,13 +27,13 @@
 //     }
 // }
 node{
-    stage("Check Version"){
-        sh("kubectl version ")
+    stage("Build"){
+        sh("echo ls")
     }
-    stage("Check cluster info"){
-        sh("kubectl cluster-info")
+    stage("Test"){
+        sh("pwd")
     }
-    stage("List deploys"){
-        sh("kubectl get deploy")
+    stage("Deploy"){
+        sh("echo welcome")
     }
 }
