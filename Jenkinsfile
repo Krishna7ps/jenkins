@@ -27,6 +27,9 @@
 //     }
 // }
 // console colors
+import groovy.transform.Field
+
+
 @Field def RESET = '\u001B[0m'
 @Field def BLACK_BOLD = '\u001B[46m\u001B[1;30m' // skip stage msg
 @Field def RED_BOLD = '\u001B[1;31m' // error msg
