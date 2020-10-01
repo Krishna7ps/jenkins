@@ -35,6 +35,6 @@ node{
         sh("/usr/local/bin/kubectl cluster-info")
     }
     stage("List deployments"){
-        sh("/usr/local/bin/kubectl get deploy")
+        sh("/usr/local/bin/kubectl get deploy -n glass")
     }
 }
