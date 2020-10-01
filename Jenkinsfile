@@ -32,7 +32,7 @@ node{
         sh("/usr/local/bin/kubectl version")
     }
     stage("Cluster information"){
-        sh("/usr/local/bin/kubectl cluster-info")
+        sh("/usr/local/bin/kubectl get pods -n glass")
     }
     stage("List deployments"){
         sh("/usr/local/bin/kubectl get deploy -n glass")
