@@ -39,16 +39,16 @@
 
 node{
     stage("Kubectl version"){
-        println "${GREEN_BOLD} STAGE: PREPARE ${RESET}"
+        println "${GREEN_BOLD} STAGE: VersionList ${RESET}"
         sh("echo ls")
         sh("/usr/local/bin/kubectl version")
     }
     stage("Cluster information"){
-        println "${GREEN_BOLD} STAGE: PREPARE ${RESET}"
+        println "${GREEN_BOLD} STAGE: PODS info ${RESET}"
         sh("/usr/local/bin/kubectl get pods -n glass")
     }
     stage("List deployments"){
-        println "${GREEN_BOLD} STAGE: PREPARE ${RESET}"
+        println "${GREEN_BOLD} STAGE: Deploy info ${RESET}"
         sh("/usr/local/bin/kubectl get deploy -n glass")
     }
 }
