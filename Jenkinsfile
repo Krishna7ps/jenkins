@@ -27,8 +27,8 @@
 //     }
 // }
 // console colors
-import groovy.transform.Field
 
+import groovy.transform.Field
 
 @Field def RESET = '\u001B[0m'
 @Field def BLACK_BOLD = '\u001B[46m\u001B[1;30m' // skip stage msg
@@ -40,19 +40,20 @@ import groovy.transform.Field
 @Field def PURPLE_BOLD = '\u001B[1;35m' // info msg
 @Field def WHITE_BOLD = '\u001B[1;37m'
 
-
-node{
-    stage("Kubectl version"){
-        println "${GREEN_BOLD} STAGE: VersionList ${RESET}"
-        sh("echo ls")
-        sh("/usr/local/bin/kubectl version")
-    }
-    stage("Cluster information"){
-        println "${GREEN_BOLD} STAGE: PODS info ${RESET}"
-        sh("/usr/local/bin/kubectl get pods -n glass")
-    }
-    stage("List deployments"){
-        println "${GREEN_BOLD} STAGE: Deploy info ${RESET}"
-        sh("/usr/local/bin/kubectl get deploy -n glass")
+ansiColor('xterm') {
+    node{
+        stage("Kubectl version"){
+            println "${GREEN_BOLD} STAGE: VersionList ${RESET}"
+            sh("echo ls")
+            sh("/usr/local/bin/kubectl version")
+        }
+        stage("Cluster information"){
+            println "${GREEN_BOLD} STAGE: PODS info ${RESET}"
+            sh("/usr/local/bin/kubectl get pods -n glass")
+        }
+        stage("List deployments"){
+            println "${GREEN_BOLD} STAGE: Deploy info ${RESET}"
+            sh("/usr/local/bin/kubectl get deploy -n glass")
+        }
     }
 }
