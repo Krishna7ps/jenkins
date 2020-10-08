@@ -30,7 +30,7 @@
 
 
 
-#!/usr/bin/env groovy
+// #!/usr/bin/env groovy
 import groovy.transform.Field
 
 @Field def RESET = '\u001B[0m'
