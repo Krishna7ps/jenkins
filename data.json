@@ -1,0 +1,140 @@
+{
+    "datasource": "Holmes - prd",
+    "fieldConfig": {
+      "defaults": {
+        "custom": {},
+        "unit": "m",
+        "max": 200,
+        "thresholds": {
+          "mode": "absolute",
+          "steps": [
+            {
+              "color": "green",
+              "value": null
+            },
+            {
+              "color": "#EAB839",
+              "value": 120
+            },
+            {
+              "color": "red",
+              "value": 200
+            }
+          ]
+        },
+        "mappings": []
+      },
+      "overrides": []
+    },
+    "gridPos": {
+      "h": 3,
+      "w": 6,
+      "x": 6,
+      "y": 21
+    },
+    "id": 23763571993,
+    "options": {
+      "reduceOptions": {
+        "values": false,
+        "calcs": [
+          "mean"
+        ],
+        "fields": ""
+      },
+      "orientation": "horizontal",
+      "displayMode": "gradient",
+      "showUnfilled": true
+    },
+    "pluginVersion": "7.1.5",
+    "repeatDirection": "h",
+    "targets": [
+      {
+        "expr": "sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"5(.)+\", route=\"get_orders\"}[10m]) OR on() vector(0)) / sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"(2|5)(.)+\", route=\"get_orders\"}[10m])) * 20160",
+        "legendFormat": "{{route}}",
+        "interval": "",
+        "refId": "A"
+      },
+      {
+        "expr": "sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"5(.)+\", route=~\"order-latest\"}[10m]) OR on() vector(0)) / sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"(2|5)(.)+\", route=~\"order-latest\"}[10m])) * 20160",
+        "legendFormat": "{{route}}",
+        "interval": "",
+        "refId": "B"
+      },
+      {
+        "expr": "sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"5(.)+\", route=~\"get_return\"}[10m]) OR on() vector(0)) / sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"(2|5)(.)+\", route=~\"get_return\"}[10m])) * 20160",
+        "legendFormat": "{{route}}",
+        "interval": "",
+        "refId": "C"
+      },
+      {
+        "expr": "sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"5(.)+\", route=~\"order-search\"}[10m]) OR on() vector(0)) / sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"(2|5)(.)+\", route=~\"order-search\"}[10m])) * 20160",
+        "legendFormat": "{{route}}",
+        "interval": "",
+        "refId": "D"
+      },
+      {
+        "expr": "sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"5(.)+\", route=~\"order-invoice\"}[10m]) OR on() vector(0)) / sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"(2|5)(.)+\", route=~\"order-invoice\"}[10m])) * 20160",
+        "legendFormat": "{{route}}",
+        "interval": "",
+        "refId": "E"
+      },
+      {
+        "expr": "sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"5(.)+\", route=\"order-exchange\"}[10m]) OR on() vector(0)) / sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"(2|5)(.)+\", route=\"order-exchange\"}[10m])) * 20160",
+        "legendFormat": "{{route}}",
+        "interval": "",
+        "refId": "F"
+      },
+      {
+        "expr": "sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"5(.)+\", route=~\"order-track_data\"}[10m]) OR on() vector(0)) / sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"(2|5)(.)+\", route=~\"order-track_data\"}[10m])) * 20160",
+        "legendFormat": "{{route}}",
+        "interval": "",
+        "refId": "G"
+      },
+      {
+        "expr": "sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"5(.)+\", route=~\"order-cancellation\"}[10m]) OR on() vector(0)) / sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"(2|5)(.)+\", route=~\"order-cancellation\"}[10m])) * 20160",
+        "legendFormat": "{{route}}",
+        "interval": "",
+        "refId": "H"
+      },
+      {
+        "expr": "sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"5(.)+\", route=~\"order-invoice_list\"}[10m]) OR on() vector(0)) / sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"(2|5)(.)+\", route=~\"order-invoice_list\"}[10m])) * 20160",
+        "legendFormat": "{{route}}",
+        "interval": "",
+        "refId": "I"
+      },
+      {
+        "expr": "sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"5(.)+\", route=~\"order-return_label\"}[10m]) OR on() vector(0)) / sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"(2|5)(.)+\", route=~\"order-return_label\"}[10m])) * 20160",
+        "legendFormat": "{{route}}",
+        "interval": "",
+        "refId": "J"
+      },
+      {
+        "expr": "sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"5(.)+\", route=\"order-integrated-return\"}[10m]) OR on() vector(0)) / sum by (route) (rate(glass_incoming_http_request_duration_seconds_count{statusCode=~\"(2|5)(.)+\", route=\"order-integrated-return\"}[10m])) * 20160",
+        "legendFormat": "{{route}}",
+        "interval": "",
+        "refId": "K"
+      }
+    ],
+    "title": "Test",
+    "type": "bargauge",
+    "description": "",
+    "timeFrom": null,
+    "timeShift": null,
+    "transformations": []
+  }
+
+
+
+// get_orders
+// order-latest
+// order-return
+// order-search
+// order-invoice
+// order-exchange
+// order-track_data
+// order-cancellation
+// order-invoice_list
+// order-return_label
+// order-integrated-return
+
+

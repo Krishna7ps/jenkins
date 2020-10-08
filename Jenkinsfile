@@ -28,6 +28,9 @@
 // }
 // console colors
 
+
+
+#!/usr/bin/env groovy
 import groovy.transform.Field
 
 @Field def RESET = '\u001B[0m'
@@ -41,9 +44,14 @@ import groovy.transform.Field
 @Field def WHITE_BOLD = '\u001B[1;37m'
 
 ansiColor('xterm') {
+    properties([parameters([string(defaultValue:"hello", description:"What's happening",name:'Greetings')])])
     node{
         stage("Kubectl version"){
             println "${GREEN_BOLD} STAGE: VersionList ${RESET}"
+            withEnv(["PATHI=test/bin"]){
+                println "${env.PATHI}"
+            }
+            println "${params.Greetings}"
             sh("echo ls")
             sh("/usr/local/bin/kubectl version")
         }
