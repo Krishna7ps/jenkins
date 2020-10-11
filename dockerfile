@@ -1,7 +1,7 @@
 FROM node
 WORKDIR /usr/src/app 
-COPY package.json .
+COPY ./docker/package.json .
 RUN npm install
-COPY . .
+COPY ./docker/ .
 EXPOSE 8080
 CMD ["node", "index.js"]
