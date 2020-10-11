@@ -50,10 +50,11 @@ ansiColor('xterm') {
             git branch: 'main', url: 'https://github.com/Krishna7ps/jenkins.git'
         }
         stage("dockerVersion"){
-            sh("/usr/local/bin/docker version")
-            sh("pwd")
-            sh("ls -lha")
-            // sh("/usr/local/bin/docker build -t my-image:v1 .")
+            // sh("/usr/local/bin/docker version")
+            // sh("pwd")
+            // sh("ls -lha")
+            sh('cd ./docker/')
+            sh("/usr/local/bin/docker build -t my-image:v1 .")
             sh("/usr/local/bin/docker images")
         }
     }
