@@ -43,6 +43,7 @@ import groovy.transform.Field
 @Field def PURPLE_BOLD = '\u001B[1;35m' // info msg
 @Field def WHITE_BOLD = '\u001B[1;37m'
 
+
 ansiColor('xterm') {
     // properties([parameters([string(defaultValue:"hello", description:"What's happening",name:'Greetings')])])
     node{
