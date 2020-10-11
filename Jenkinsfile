@@ -47,7 +47,7 @@ ansiColor('xterm') {
     // properties([parameters([string(defaultValue:"hello", description:"What's happening",name:'Greetings')])])
     node{
         stage("dockerVersion"){
-            sh("docker version")
+            sh("/usr/local/bin/docker version")
         }
     }
 }
