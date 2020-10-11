@@ -46,10 +46,13 @@ import groovy.transform.Field
 ansiColor('xterm') {
     // properties([parameters([string(defaultValue:"hello", description:"What's happening",name:'Greetings')])])
     node{
+        stage('checkout'){
+            git branch: 'main', url: 'https://github.com/Krishna7ps/jenkins.git'
+        }
         stage("dockerVersion"){
             sh("/usr/local/bin/docker version")
             sh("pwd")
-            sh("ls")
+            sh("ls -lha")
             // sh("/usr/local/bin/docker build -t my-image:v1 .")
             sh("/usr/local/bin/docker images")
         }
