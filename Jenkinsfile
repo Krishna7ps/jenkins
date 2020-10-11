@@ -56,7 +56,7 @@ ansiColor('xterm') {
             sh("/usr/local/bin/docker build -t my-image:v1 ./docker/")
             sh("/usr/local/bin/docker images")
             sh("/usr/local/bin/docker run -d my-image:v1")
-            sh("/usr/local/bin/docker ps -a")
+            sh("/usr/local/bin/docker ps")
         }
     }
 }
