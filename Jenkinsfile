@@ -51,8 +51,8 @@ ansiColor('xterm') {
         }
         stage("dockerVersion"){
             // sh("/usr/local/bin/docker version")
-            // sh("pwd")
-            // sh("ls -lha")
+            sh("pwd")
+            sh("ls -lha")
             sh('cd ./docker/')
             sh("/usr/local/bin/docker build -t my-image:v1 .")
             sh("/usr/local/bin/docker images")
