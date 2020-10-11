@@ -53,9 +53,7 @@ ansiColor('xterm') {
             // sh("/usr/local/bin/docker version")
             sh("pwd")
             sh("ls -lha")
-            sh('cd ./docker/')
-            sh("pwd")
-            sh("/usr/local/bin/docker build -t my-image:v1 .")
+            sh("/usr/local/bin/docker build -t my-image:v1 ./docker/")
             sh("/usr/local/bin/docker images")
         }
     }
