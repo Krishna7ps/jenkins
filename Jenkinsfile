@@ -48,7 +48,7 @@ ansiColor('xterm') {
     node{
         stage("dockerVersion"){
             sh("/usr/local/bin/docker version")
-            sh("/usr/local/bin/docker build -t testImage:v1 ./docker/")
+            sh("/usr/local/bin/docker build -t my-image:v1 ./docker/")
             sh("/usr/local/bin/docker images")
         }
     }
