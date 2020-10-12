@@ -48,9 +48,11 @@ ansiColor('xterm') {
     // properties([parameters([string(defaultValue:"hello", description:"What's happening",name:'Greetings')])])
     node{
         stage('checkout'){
+            println "${GREEN_BOLD} STAGE: checkout ${RESET}"
             git branch: 'main', url: 'https://github.com/Krishna7ps/jenkins.git'
         }
         stage("dockerVersion"){
+            println "${GREEN_BOLD} STAGE: Dockerbuild ${RESET}"
             // sh("/usr/local/bin/docker version")
             sh("pwd")
             sh("ls -lha")
@@ -111,4 +113,4 @@ ansiColor('xterm') {
 //             sh("/usr/local/bin/kubectl get deploy -n glass")
 //         }
 //     }
-// }
+// 
