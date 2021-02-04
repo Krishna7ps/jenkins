@@ -51,15 +51,15 @@ ansiColor('xterm') {
             println "${GREEN_BOLD} STAGE: checkout ${RESET}"
             git branch: 'main', url: 'https://github.com/Krishna7ps/jenkins.git'
         }
-        stage("dockerVersion"){
-            println "${GREEN_BOLD} STAGE: Dockerbuild ${RESET}"
-            // sh("/usr/local/bin/docker version")
+        stage("Jenkins build status"){
+            println "${GREEN_BOLD} STAGE: Jenkins build status ${RESET}"
+//          sh("/usr/local/bin/docker version")
             sh("pwd")
             sh("ls -lha")
-            sh("/usr/local/bin/docker build -t my-image:v1 ./docker/")
-            sh("/usr/local/bin/docker images")
-            sh("/usr/local/bin/docker run -d -p 9090:8090 my-image:v1")
-            sh("/usr/local/bin/docker ps")
+//          sh("/usr/local/bin/docker build -t my-image:v1 ./docker/")
+//          sh("/usr/local/bin/docker images")
+//          sh("/usr/local/bin/docker run -d -p 9090:8090 my-image:v1")
+//          sh("/usr/local/bin/docker ps")
         }
     }
 }
