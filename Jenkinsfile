@@ -52,10 +52,12 @@ ansiColor('xterm') {
             git branch: 'main', url: 'https://github.com/Krishna7ps/jenkins.git'
         }
         stage("Jenkins build status"){
-            println "${GREEN_BOLD} STAGE: Jenkins build status ${RESET}"
+            println "${GREEN_BOLD} STAGE: Posting Marker ${RESET}"
+            releaseMarker releaseName: 'marketDemo-jenkinsfile', releaseStartTimestamp: "${currentBuild.startTimeInMillis}"
+
 //          sh("/usr/local/bin/docker version")
-            sh("pwd")
-            sh("ls -lha")
+//            sh("pwd")
+//            sh("ls -lha")
 //          sh("/usr/local/bin/docker build -t my-image:v1 ./docker/")
 //          sh("/usr/local/bin/docker images")
 //          sh("/usr/local/bin/docker run -d -p 9090:8090 my-image:v1")
