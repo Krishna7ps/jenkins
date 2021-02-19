@@ -19,7 +19,8 @@ ansiColor('xterm') {
         }
         stage("Jenkins build status"){
             println "${GREEN_BOLD} STAGE: Posting Marker ${RESET}"
-            releaseMarker releaseName: 'marketDemo-jenkinsfile', releaseStartTimestamp: "${currentBuild.startTimeInMillis}"
+            shortCommit = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
+            releaseMarker releaseName: "${shortCommit}", releaseStartTimestamp: "${currentBuild.startTimeInMillis}"
         }
     }
 }
